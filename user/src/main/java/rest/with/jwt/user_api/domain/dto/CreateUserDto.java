@@ -5,13 +5,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class CreateUserDto {
     @NonNull
     private String username;
     @NonNull
     private String password;
+
+    public CreateUserDto(@NonNull String username, @NonNull String password) {
+        this.username = username;
+        this.password = password;
+    }
+
 
     public @NonNull String getUsername() {
         return username;

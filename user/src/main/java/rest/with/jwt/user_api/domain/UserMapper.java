@@ -1,6 +1,6 @@
 package rest.with.jwt.user_api.domain;
 
-import org.mapstruct.Mapper;
+
 import org.springframework.stereotype.Component;
 import rest.with.jwt.user_api.domain.dto.CreateUserDto;
 import rest.with.jwt.user_api.domain.dto.UserDto;

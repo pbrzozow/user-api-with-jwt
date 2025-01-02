@@ -9,8 +9,6 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 public class User implements UserDetails {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +18,19 @@ private String username;
 @Column(unique = true,nullable = false)
 private String password;
 
+    public User(Long id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
 
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User() {
+    }
 
     @Override
     public String getUsername(){
