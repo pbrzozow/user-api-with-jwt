@@ -53,7 +53,7 @@ public class UserControllerTest {
         //Act
         ResponseEntity<?> responseEntity = userController.registerUser(createUserDto);
         //Assert
-        assert(Objects.equals(responseEntity.getBody(), "Account has been succesfully created!"));
+        assert(Objects.equals(responseEntity.getBody(), "Account has been successfully created!"));
         assert(responseEntity.getStatusCode().equals(HttpStatus.OK));
     }
 }
