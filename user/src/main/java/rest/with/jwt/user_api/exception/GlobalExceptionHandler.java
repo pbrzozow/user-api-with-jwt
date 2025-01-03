@@ -13,4 +13,18 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occured: "+ex.getMessage());
     }
 
+    @ExceptionHandler(IncorrectCredentialsException.class)
+    public ResponseEntity<String> handleIncorrectCredentials(Exception ex){
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body( ex.getMessage());
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFound(Exception ex){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+    @ExceptionHandler(org.springframework.dao.DataIntegrityViolationException.class)
+    public ResponseEntity<String> handleUserAlreadyExists(Exception ex){
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("User already exists!");
+    }
+
 }
