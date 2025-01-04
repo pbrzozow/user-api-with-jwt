@@ -25,7 +25,7 @@ in, view a list of users, updating their profiles, and delete users by their ID.
 | Description                       |
 | :-------------------------------- |
 | **Required**. Username and password.
- After successful login valid token is being sent.|
+ After a successful, a login valid token is sent.|
 
 #### Get item
 
@@ -45,7 +45,7 @@ in, view a list of users, updating their profiles, and delete users by their ID.
 
 | Description                       |
 | :-------------------------------- |
-| **Required**. To delete user account authentication is required. |
+| **Required**. To delete a user account authentication is required. |
 
 #### Get item
 
@@ -55,7 +55,7 @@ in, view a list of users, updating their profiles, and delete users by their ID.
 
 | Description                       |
 | :-------------------------------- |
-| **Required**. {id} must be equal to current user id.
+| **Required**. The {id} must match the current user ID.
 User must be authenticated. |
 
 
@@ -74,13 +74,12 @@ Then you can start your spring boot application successfully.
 
 ## Running Tests
 
-To run tests, run the following command in the root file.
+To run the tests, use the following command in the root file.
 
 ```bash
   mvn  test
 ```
-Also using Postman you can test application endpoints.
-Use a json schema from below. **Make sure to add Bearer token authorization in Postman. Use a token from login response.**
+Also, you can test the application's endpoints using Postman. Use the JSON schema below. **Make sure to add a Bearer token authorization in Postman. Use a token from login response.**
 
 ```
 {
@@ -90,6 +89,6 @@ Use a json schema from below. **Make sure to add Bearer token authorization in P
 ```
 ## Environment Variables
 
-You can specify your own environment variables in application.properties. It is possible to change JWT secret key **important**
-key must be enough secure for spring security requirements (256-bit key). You can also change database password or username. Remember to change it also in docker-compose.yml file.
+You can specify your own environment variables in application.properties. It is possible to change the JWT secret key, **important**
+the key must meet Spring Security requirements by being sufficiently secure (256-bit key). You can also change the database password or username. Remember to change it also in the docker-compose.yml file.
 
