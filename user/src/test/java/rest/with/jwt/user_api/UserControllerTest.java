@@ -44,7 +44,6 @@ public class UserControllerTest {
         assert Objects.equals(response.getBody(), users);
     }
     @Test
-    @WithMockUser(username = "kasia")
     void shouldCreateUser(){
         //Arrange
         CreateUserDto createUserDto = new CreateUserDto("aga","pass");
