@@ -28,7 +28,7 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Transactional
+    
     public UserDto createUser(CreateUserDto createUserDto) {
         User user = userMapper.toEntity(createUserDto);
         String password = user.getPassword();
@@ -42,11 +42,11 @@ public class UserService {
                 .map(userMapper::toDto)
                 .toList();
     }
-    @Transactional
+
     public void deleteById(Long id){
         userRepository.deleteById(id);
     }
-    @Transactional
+
     public UserDto updateUser(UpdateUserDto updateUserDto,Long id){
         String newUsername = updateUserDto.getUsername();
         String newPassword = updateUserDto.getPassword();
